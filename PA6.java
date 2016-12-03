@@ -27,13 +27,7 @@ public class PA6{
 
 	//Methods
 
-	/*MAIN MET= reads in the cost data from the instructor provided .txt file
- 	 *
-	 * @returns 2-D int array that holds the cost travel when traveling from city to city
-	 *
-	 * requires: 
-	 * ensures:
-	 */
+	/*MAIN METHOD*/
 	public static void main(String[] args){
 		CITIES = Integer.parseInt(args[0]);
 		COST_FILE = args[1];
@@ -65,8 +59,8 @@ public class PA6{
  	 *
 	 * @returns 2-D int array that holds the cost travel when traveling from city to city
 	 *
-	 * requires: 
-	 * ensures:
+	 * requires: CITIES and COST_FILE not be empty
+	 * ensures: 2D array with the cost from the txt file is returned
 	 */
 	public static int[][] readCostFromFile(){
 		int value, i, j;
@@ -98,12 +92,12 @@ public class PA6{
 
 /************************************************************************/
 
-	/*public int[][] readCostFromFile() reads in the cost data from the instructor provided .txt file
- 	 *
-	 * @returns 2-D int array that holds the cost travel when traveling from city to city
+	/*public static int computeCost(ArrayList<Integer> tour) brings an ArrayList as a parameter and uses
+     *          the cost matrix to calcualte the cost of the entire trip
+	 * @returns int that represents the cost of a completed trip
 	 *
-	 * requires: 
-	 * ensures:
+	 * requires: CITIES and cost[][] not be empty
+	 * ensures: int value of the entire trip is calculated and returned
 	 */
 	public static int computeCost(ArrayList<Integer> tour){
 		int totalCost = 0;
@@ -122,12 +116,13 @@ public class PA6{
 
 /************************************************************************/
 
-	/*public int[][] readCostFromFile() reads in the cost data from the instructor provided .txt file
- 	 *
-	 * @returns 2-D int array that holds the cost travel when traveling from city to city
+	/*public static void shortestPath() populates the visitedCities ArrayList with all the cities, with the
+ 	 *              each city being the closest city to the previous city.
+     *
+	 * @returns none
 	 *
-	 * requires: 
-	 * ensures:
+	 * requires: CITIES and cost[][] not to be empty
+	 * ensures: visitedCities holds the minimum spanning tree of the cities
 	 */
 	public static void shortestPath(){
         minFlag = false;
